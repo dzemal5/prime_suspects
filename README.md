@@ -177,31 +177,6 @@ Overall, this visual allows you to compare the total sales across different age 
 and identify which age groups contribute the most or least to the total sales in each quarter. 
 It also helps you spot any potential trends or patterns in sales across different quarters for specific age groups.'''
 
-```python
-# Create a figure and axis
-fig, ax = plt.subplots(figsize=(10, 6))
-
-# Pivot the data to create a wide format suitable for dot plot
-dot_plot_data = sales_by_quarter_age_bin.pivot(index='age_bin', columns='quarter', values='value')
-
-# Plot the dot plot
-dot_plot_data.plot(kind='bar', ax=ax, edgecolor='black', linewidth=1)
-
-# Set chart title and axis labels
-ax.set_title('Quarterly Total Sales by Age Bin')
-ax.set_xlabel('Age Bins')
-ax.set_ylabel('Total Sales')
-
-# Rotate x-axis labels for better visibility
-plt.xticks(rotation=45)
-
-# Add legend
-ax.legend(dot_plot_data.columns, title='Quarter', bbox_to_anchor=(1.02, 1), loc='upper left')
-
-# Display the chart
-plt.tight_layout()
-plt.show()
-```
 
 ## Demographics
 
@@ -209,29 +184,6 @@ plt.show()
 
 
 This section analyzes the distribution of categories by age and gender visualizes it using a bar plot.
-
-```python
-count_df = main_df.groupby(['category', 'Gender']).size().unstack(fill_value=0)
-count_df.plot(kind='bar', alpha=0.7, figsize=(12, 6))
-
-plt.title('Distribution of Categories by Gender')
-
-plt.xlabel('Categories')
-
-plt.ylabel('Frequency')
-
-plt.show()
-
-# ax = count_df[['Gender', 'category']].plot.hist(bins=30, alpha=0.7, figsize=(12, 6))
-
-# Adding titles and labels
-# ax.set_title('Histogram of Two Variables')
-# ax.set_xlabel('Value')
-# ax.set_ylabel('Frequency')
-
-# Display the plot
-plt.show()
-```
 
 **Analysis:**
 The bar plot visualizes the distribution of categories by gender. Each bar represents the frequency or count of entries for a particular category, divided into segments representing different genders (e.g., male and female).
@@ -253,20 +205,6 @@ By analyzing the bar plot, you can gain insights into the following:
 ![Sales Trend Over Time](<Images/Sales trend.png>)
 
 This section analyzes and plots the sales trend over time by aggregating the total sales value by week.
-
-```python
-# Time Series Analysis for Weekly Sales
-plt.figure(figsize=(12, 6))
-weekly_sales.plot()
-plt.title('Weekly Sales Over Time')
-plt.xlabel('Week')
-plt.ylabel('Total Sales (ten millions)')
-plt.grid(True)
-plt.tight_layout()
-
-plt.savefig("Images/3. Total Sales (line).png")
-plt.show()
-```
 
 **Analysis:**
 The line plot visualizes the sales trend over time by displaying the total sales value aggregated by week.
@@ -297,41 +235,6 @@ Overall, the line plot provides a visual representation of the sales trend over 
 
 This section calculates and plots the average order value over time, including annotations for percentage changes with colored arrows.
 
-```python
-# Calculate percentage change of average order value over time
-percentage_change = avg_order_value.pct_change() * 100
-# Create an interactive line chart with Plotly
-fig = go.Figure()
-# Add trace for the line chart
-fig.add_trace(go.Scatter(x=avg_order_value.index, y=avg_order_value.values,
-                         mode='lines+markers', name='Average Order Value ($)'))
-
-# Add custom hover label with details and percentage change
-hover_text = [f'Date: {date}<br>Average Order Value: ${value:.2f}<br>Percentage Change: {change:.2f}%'
-              for date, value, change in zip(avg_order_value.index, avg_order_value.values, percentage_change)]
-fig.add_trace(go.Scatter(x=avg_order_value.index, y=avg_order_value.values,
-                         mode='markers', marker=dict(color='rgba(0,0,0,0)'),
-                         hoverinfo='text', hovertext=hover_text))
-
-# Update layout
-fig.update_layout(title='Average Order Value Over Time',
-                  xaxis_title='Date', yaxis_title='Average Order Value ($)',
-                  hovermode='closest')
-
-# Add annotations for percentage change with colored arrows
-for i in range(1, len(avg_order_value)):
-    if percentage_change.iloc[i] > 0:
-        fig.add_annotation(x=avg_order_value.index[i], y=avg_order_value.values[i],
-                           text=f'{percentage_change.iloc[i]:.2f}%', showarrow=True,
-                           arrowhead=2, arrowsize=1, arrowwidth=2, arrowcolor='green')
-    elif percentage_change.iloc[i] < 0:
-        fig.add_annotation(x=avg_order_value.index[i], y=avg_order_value.values[i],
-                           text=f'{percentage_change.iloc[i]:.2f}%', showarrow=True,
-                           arrowhead=3, arrowsize=1, arrowwidth=2, arrowcolor='red')
-
-# Show interactive chart
-fig.show()
-```
 **Analysis:**
 The line plot visualizes the average order value over time, typically aggregated by month or year.
 
@@ -362,29 +265,6 @@ Overall, the line plot with annotated percentage changes provides a comprehensiv
 
 This section explores the impact of discounts on total sales using a box plot.
 
-```python
-# Data for all columns that are considered for Box plot
-plot_data = [gh_main_df[col].dropna() for col in my_columns]
-
-# Create a figure object and an axis object
-plt.figure(figsize=(10, 5))
-# Boxplot
-box = plt.boxplot(plot_data, notch=True, patch_artist=True)
-    
-# Adding titles and labels
-plt.title('Box Plots of Multiple Columns')
-plt.ylabel('Value')
-# Customize the x-ticks to show column names
-plt.xticks(range(1, len(my_columns) + 1), my_columns, rotation=45)  # Rotate labels for better readability
-# Layout adjustment to accommodate x-labels
-plt.tight_layout()
-
-# Save the figure
-plt.savefig("Images/2. Combined Box Plots.png")
-# Show the plot
-plt.show()
-```
-
 **Analysis:**
 Discount Percent:
 Median (the line inside the box): The median discount percentage, visible as a line within the box, is very low, suggesting that more than half of the discounts given are minimal or close to 0%.
@@ -399,18 +279,6 @@ The concentration of low discounts could suggest that Amazon model relies less o
 
 ![Sales trend by region & category](<Images/Qty sold by region & category.png>)
 
-```python
-# Plot bar chart with Plotly Express to denote Qty sold by Region and category
-fig = px.bar(sorted, x='Region', y='qty_ordered', title='Qty sold by Region & Categories',
-             hover_data=['qty_ordered'], color='category',barmode='group')
-
-# Increase the size of the pie chart
-fig.update_layout(width=1100, height=800)
-
-# Show figure
-fig.show()
-```
-
 ## price trend
 
 (Dzemal not completed)
@@ -422,67 +290,6 @@ fig.show()
 ![Total Sales vs Customer sentiment Index](Images/customersentiment.png)
 
 Sales trend by region across 15 categories AND 14. Sales by category
-
-```python
-# Note: # Unemployment rate bet 10/2020-09/2021 from Bureau of Labor Statistics (https://www.bls.gov/charts/employment-situation/civilian-unemployment-rate.htm)
-# Note: # Consumer Sentiment Index between 10/2020-09/2021 data is from Bureau of Labor Statistics (https://www.bls.gov/charts/employment-situation/civilian-unemployment-rate.htm)
-
-monthly_sales = gh_main_df['Total Amount'].resample('ME').sum()
-
-# Data for Amazon Sales Amount and Unemployment Rate Over Time chart
-data1 = {
-    'Date': pd.date_range(start='2020-10-01', periods=12, freq='ME'),
-    'Sales Amount': monthly_sales,
-    'Unemployment Rate': [6.8, 6.7, 6.7, 6.4, 6.2, 6.1, 6.1, 5.8, 5.9, 5.4, 5.1, 4.7]
-}
-df1 = pd.DataFrame(data1)
-
-# Data for Amazon Sales Amount and Consumer Sentiment Index Over Time chart
-data2 = {
-    'Date': pd.date_range(start='2020-10-01', periods=12, freq='ME'),
-    'Sales Amount': monthly_sales,
-    'Consumer Sentiment Index': [81.8, 76.9, 80.7, 79, 76.8, 84.9, 88.3, 82.9, 85.5, 81.2, 70.3, 72.8]
-}
-df2 = pd.DataFrame(data2)
-
-# Create subplots
-fig, (ax1, ax3) = plt.subplots(1, 2, figsize=(15, 6))
-
-# Plot Amazon Sales Amount and Unemployment Rate Over Time chart
-color = 'tab:blue'
-ax1.set_xlabel('Date')
-ax1.set_ylabel('Amazon Sales Amount', color=color)
-ax1.plot(df1['Date'], df1['Sales Amount'], color=color)
-ax1.tick_params(axis='y', labelcolor=color)
-ax1.set_title('Amazon Sales Amount and Unemployment Rate Over Time')
-
-ax2 = ax1.twinx()
-color = 'tab:red'
-ax2.set_ylabel('Unemployment Rate', color=color)
-ax2.plot(df1['Date'], df1['Unemployment Rate'], color=color)
-ax2.tick_params(axis='y', labelcolor=color)
-ax1.grid(True)
-
-# Plot for Amazon Sales Amount and Consumer Sentiment Index Over Time chart
-color = 'tab:blue'
-ax3.set_xlabel('Date')
-ax3.set_ylabel('Amazon Sales Amount', color=color)
-ax3.plot(df2['Date'], df2['Sales Amount'], color=color)
-ax3.tick_params(axis='y', labelcolor=color)
-ax3.set_title('Amazon Sales Amount and Consumer Sentiment Index Over Time')
-
-ax4 = ax3.twinx()
-color = 'tab:red'
-ax4.set_ylabel('Consumer Sentiment Index', color=color)
-ax4.plot(df2['Date'], df2['Consumer Sentiment Index'], color=color)
-ax4.tick_params(axis='y', labelcolor=color)
-ax3.grid(True)
-
-# Adjust layout and save the figure
-plt.tight_layout()
-plt.savefig("Images/Amazon Sales Amount Comparison.png")
-plt.show()
-```
 
 **Analysis:**
 
@@ -532,7 +339,6 @@ Additionally, there was an assumption that discounted items would drive higher s
 - Furthermore, the analysis highlighted the importance of considering factors beyond discounts, such as product demand, marketing strategies, and customer preferences, in driving sales performance. While discounts may influence purchasing behavior to some extent, the substantial variability in sales values and the presence of orders with no discounts suggest that other factors play a more significant role in determining sales success.
 In summary, the analysis challenged the assumptions about the dominance of women's fashion over men's fashion and the expected high sales for discounted items. It revealed a more nuanced picture, where men's fashion performed comparably to women's fashion, and most sales occurred without significant discounts, indicating the influence of other factors beyond discounts on purchasing decisions.
 
-
 ## Declaration
 The authors declare and solemnly affirm that this research has neither been funded by any political or religious groups nor are the authors in any way affiliated to any institutions with direct or indirect access to groups with biased interests. This research work has been carried out in the interests of technology and academics.
 
@@ -544,4 +350,3 @@ The authors declare and solemnly affirm that this research has neither been fund
 - Shephali Dubey (Visualization Lead)
 - Girish Hossalli (Data Analysis Lead)
 - J'mari Hawkins (Data Acquisition Lead)
-
