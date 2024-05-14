@@ -519,9 +519,9 @@ We are also aware that the period from 2020 to 2021 was when COVID-19 hit, and b
 
 ## Additional Learnings
 
--Github recommendation for group work: might be a better idea for each of us to have our own files within the repo and create classes, and then call on class functions to avoid back merge issues
--File naming conventions: We need to not have spaced between file names
--Dataset search: choose a more robust dataset with proper provenance and reasonable date ranges
+- Github recommendation for group work: might be a better idea for each of us to have our own files within the repo and create classes, and then call on class functions to avoid back merge issues
+- File naming conventions: We need to not have spaced between file names
+- Dataset search: choose a more robust dataset with proper provenance and reasonable date ranges
 
 
 ## Declaration
@@ -536,5 +536,3 @@ The authors declare and solemnly affirm that this research has neither been fund
 - Girish Hossalli (Data Analysis Lead)
 - J'mari Hawkins (Data Acquisition Lead)
 
-[def]: /Amazon-Logo-2000-present-1024x576.jpeg
-[quarterlysales.png]: <quarterlysales.png>
