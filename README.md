@@ -519,9 +519,18 @@ We are also aware that the period from 2020 to 2021 was when COVID-19 hit, and b
 
 ## Additional Learnings
 
-- Github recommendation for group work: might be a better idea for each of us to have our own files within the repo and create classes, and then call on class functions to avoid back merge issues
-- File naming conventions: We need to not have spaced between file names
-- Dataset search: choose a more robust dataset with proper provenance and reasonable date ranges
+- For effective collaboration on GitHub, it could be advantageous if each team member maintains individual files within the repository and develops classes. Utilizing class functions would then streamline the process, potentially mitigating conflicts during merges.
+
+- In adhering to file naming conventions, it's crucial to eliminate spaces between file names. This practice ensures consistency and facilitates smooth navigation within the project structure.
+
+- When conducting a dataset search, it's advisable to opt for a more robust dataset characterized by thorough provenance documentation and reasonable date ranges. This ensures reliability and transparency in data sourcing and validation processes.
+By selecting datasets with proper provenance, we enhance the trustworthiness of our findings and reduce the risk of encountering inaccuracies or biases. Additionally, adhering to reasonable date ranges aids in maintaining data relevance and coherence, thus optimizing the quality of our analyses and interpretations.
+
+- The analysis of the dataset challenged some initial assumptions and revealed interesting insights. For instance, while it was expected that women's fashion would significantly outperform men's fashion in sales, the data showed that the sales trends for these two categories were relatively similar. This suggests that the demand for men's fashion products was comparable to that of women's fashion, contrary to the initial assumption.
+Additionally, there was an assumption that discounted items would drive higher sales, but the analysis revealed that a significant portion of orders did not have any discounts applied. In fact, the data showed that most products were sold at full price or with minimal discounts, and only a few products were heavily discounted, possibly to clear stock or for promotional purposes.
+
+- Furthermore, the analysis highlighted the importance of considering factors beyond discounts, such as product demand, marketing strategies, and customer preferences, in driving sales performance. While discounts may influence purchasing behavior to some extent, the substantial variability in sales values and the presence of orders with no discounts suggest that other factors play a more significant role in determining sales success.
+In summary, the analysis challenged the assumptions about the dominance of women's fashion over men's fashion and the expected high sales for discounted items. It revealed a more nuanced picture, where men's fashion performed comparably to women's fashion, and most sales occurred without significant discounts, indicating the influence of other factors beyond discounts on purchasing decisions.
 
 
 ## Declaration
