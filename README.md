@@ -25,12 +25,11 @@ https://data.sca.isr.umich.edu/data-archive/mine.php
 9. [Average Order Value Over Time](#average-order-value-over-time)
 10. [Discount vs. Total Sales](#discount-vs-total-sales)
 11. [Sales trend by region & category](#sales-category-by-region-&-category)
-12. [Price Trend](#price-trend)
-13. [Total Sales vs Customer sentiment Index](#total-sales-vs-customer-sentiment-indexs)
-14. [Limitations of Data](#limitations-of-data)
-15. [Additional Learnings](#additional-learnings)
-16. [Declaration](#declaration)
-17. [Group contributors](#group-contributors)
+12. [Total Sales vs Customer sentiment Index](#total-sales-vs-customer-sentiment-indexs)
+13. [Limitations of Data](#limitations-of-data)
+14. [Additional Learnings](#additional-learnings)
+15. [Declaration](#declaration)
+16. [Group contributors](#group-contributors)
 
 
 ## Introduction/Motivation
@@ -278,10 +277,6 @@ The concentration of low discounts could suggest that Amazon model relies less o
 ## Sales trend by region & category
 
 ![Sales trend by region & category](<Images/Qty sold by region & category.png>)
-
-## price trend
-
-(Dzemal not completed)
 
 **Analysis:**
 
