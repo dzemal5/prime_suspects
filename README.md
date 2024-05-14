@@ -1,7 +1,6 @@
 # Amazon Sales Data Analysis
 
-![amazon logo](/Users/christinechung/AIBOOTCAMP/prime_suspects/Images/Amazon-Logo-2000-present-1024x576.jpeg)
-
+![<amazon logo)](<Images/Amazon-Logo-2000-present-1024x576.jpeg>)
 # Group2: Prime Suspects 
 
 Resources:
