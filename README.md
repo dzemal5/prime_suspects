@@ -281,6 +281,7 @@ The concentration of low discounts could suggest that Amazon model relies less o
 This section explores Sales trend by region across 4 regions and 15 categories. Various additional interactive plots/graphs have been included in the "Amazon Sales FY20202-21.ipynb" file to explore sales trends "by category" , "by Region" , by specific products such as Mobiles & Tablets and Online versus Superstore sales. Above graph was specifically chosen as the main graph to provide some high level insights and interesting findings based on Sales Region and categories distribution across those regions.
 
 **Analysis:**
+
 Trend:
 Amazon sold 135k Mobiles and tablets (overall quantity) between Oct 2020-Sep 2021 indicating that Mobiles and tablets were their biggest sellers among all categories.
 On the other hand Amazon sold a meager 2,163 books which may indicate a major shift towards digital world during Covid.
