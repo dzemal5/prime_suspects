@@ -278,7 +278,7 @@ The concentration of low discounts could suggest that Amazon model relies less o
 
 ![Sales trend by region & category](<Images/Qty sold by region & category.png>)
 
-Sales trend by region across 4 regions and 15 categories
+This section explores Sales trend by region across 4 regions and 15 categories. Various additional interactive plots/graphs have been included in the "Amazon Sales FY20202-21.ipynb" file to explore sales trends "by category" , "by Region" , by specific products such as Mobiles & Tablets and Online versus Superstore sales. Above graph was specifically chosen as the main graph to provide some high level insights and interesting findings based on Sales Region and categories distribution across those regions.
 
 **Analysis:**
 Trend:
@@ -286,6 +286,7 @@ Amazon sold 135k Mobiles and tablets (overall quantity) between Oct 2020-Sep 202
 On the other hand Amazon sold a meager 2,163 books which may indicate a major shift towards digital world during Covid.
 Also, Mobiles & tablets sold the most in the South region (approx 50k) suggesting a much bigger market share then any other region.
 Midwest on the other hand showed a much higher in-store purchasing (35K In-store Superstore purchases) versus online.
+
 Recommendations:
 This sales trend analysis/graph may help a business like Amazon predict or anticipate future demands, guide their DC/Warehouse to stock more inventory for the right category, and maintain stock in the right region, thus saving cost & resources. For example, since all regions have high demand for Mobiles & Tablets but barely any demand for books, a local Distribution center in each region managing stock and shipments accordingly i.e higher ratio of Mobiles & tablets then books, would be the most cost effective approach here.
 Similarly, since Appliances(30.51K) & computing products(7k) sold the most in South, in comparison to other regions; Kids & Baby products (7k) boomed in South  whereas Health & Sports products (12.33k) moved the most in Midwest; Men's fashion products(36.20K) and Women's Fashion products (29.35k) moved the most in the South; it would make sense for Amazon to stock these products not simply based on overall sales trend, but sales trends specific to the 4 regions.
