@@ -13,7 +13,7 @@ https://data.sca.isr.umich.edu/data-archive/mine.php
 - Unemployment Index:
  https://www.bls.gov/charts/employment-situation/civilian-unemployment-rate.htm
 
--ChatGPT
+- ChatGPT
 
 ## Table of Contents
 
